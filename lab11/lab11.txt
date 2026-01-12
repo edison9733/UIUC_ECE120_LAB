@@ -1,0 +1,37 @@
+Question 1: Describe the errors that occur when trying to assemble lab13.asm. Identify the cause of each error.
+    1. LINE 14: illegal operands for missing opcode > assembler does not have instruction sequence to map instruction and data to memory address 
+    2. LINE 16: instruction appears before .ORIG > missing .ORIG
+    3. LINE 17: constant outside of allowed range > the offset to the label does not fit in the bit field 
+    4. LINE 19: illegal operans for ADD > there is an extra  " , "
+    5. LINE 30: constant outide of allowed range > the immediate value does not fit in the bit field
+    6. LINE 32: label OUTERLOOP has already appeared > the order of p and z is wrong in BR opcode 
+    7. LINE 35: constant outise of allowed range > the immediate value does not fit in the bit field 
+    8. LINE 43:  no. END directive found > the assembler does not know where the source code ends 
+
+
+
+Question 2: For each label in the code, write down the corresponding memory location. 
+>   x3000: LD R0, ZERO
+    x3001: LD R5, ZERO
+    x3002: LD R3, INPUT 
+    x3003: LD R2, MINUS_ONE 
+    x3004: ADD R1, R3, R0 
+    x3005: ADD R4, R3, R2 
+    x3006: LD R5, ZERO
+    x3007: ADD R6, R0, R4 
+    x3008: ADD R5, R5, R1 
+    x3009: ADD R6, R6, R2 
+    x300A: BRp 
+    x300B: ADD R1, R0, R5
+    x300C: ADD R4, R4, R2 
+    x300D: BRp 
+    x300E: STI R1, RESULT_PTR
+    x300F: TRAP x25 
+    x3010: .FILL x0005
+    x3011: .FILL x0000 
+    x3012: .FILL xFFFF
+    x3013: .FILL X30FF
+
+
+Question 3: Between using labels and explicit memory locations/offsets, which one makes the most sense, and why?
+> Using labels makes most sence because the location contains a value that is loaded or stored . The location NUMBER is specifically referenced by the laod instruction. The value stored or loaded in the memoery location explicitly referenced as NUMBER is loaded into the specific registers.

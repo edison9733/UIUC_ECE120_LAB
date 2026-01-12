@@ -1,0 +1,11 @@
+QUESTION 1.  Read through the program lab11.bin. What do you expect the program to do? More specifically, which register will the program modify when it is run, and what will it contain when the program finishes? (You can probably figure this out merely by reading the comments provided in lab11.bin.)
+
+ANSWER: The program will modify register R2.
+        1. The second line of the program instructs that clears register R2 by ANDing it with zero to set R2 = 0.
+        2. The third line of the program instructs that add the immediate value 12 to R2 so that R2 = 0 + 12 = 12.
+        3. The fourth line of the program instructs that stops execution. 
+        When the program finishes, R2 will contain the decimal value 12.
+QUESTION 2.  Explain in a few sentences why the ability to step through a program (run one instruction at a time) is a very useful tool for debugging a program. Debugging is the process of finding and correcting bugs (or errors) in a program. Hint: Finding a bug is often much more difficult than correcting it.
+
+ANSWER: Stepping through a program by running one instruction at a time, allowing to observe the exact state of the registers, memory and condition codes after each instruction executes.Thus, this helps to pinpoint the bug is much easier than without the stepping.
+

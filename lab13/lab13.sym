@@ -1,0 +1,20 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	OUTER_LOOP        3001
+//	CHAR_LOOP         3004
+//	INNER_LOOP        3013
+//	PRINT_ZERO        3017
+//	PRINT_ONE         301B
+//	NEXT_BIT          301E
+//	NEXT_CHAR         3021
+//	NEW_ROW           3023
+//	EXIT              3027
+//	x5000_PTR         3028
+//	x5001_PTR         3029
+//	STRING_PTR        302A
+//	FONT_PTR          302B
+//	NEWLINE_CHAR      302C
+//	FONT_DATA         302D
+

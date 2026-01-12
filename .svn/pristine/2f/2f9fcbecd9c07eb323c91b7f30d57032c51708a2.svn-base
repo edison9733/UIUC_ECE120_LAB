@@ -1,0 +1,46 @@
+; This is the file you will use for the lab assignment
+; Make sure to comment your code properly and don't exceed 
+; the line limitation for this assignment.  Good luck!
+
+0011 0001 0000 0000 ; x3100 - starting address of the program
+
+; The program description and code starts here
+
+My name is EDISON LIU YOUN HUAN and my INTL ID is 3250300534, 12 December 2025. The purpose and general function of my program is the addition of 10 16-bit unsigned value which is started from memory of address x3132 from the file numbers.bin 
+
+R0 holds the memory of R3 to load the current value
+R3 is to be used as a pointer to point to the location of the numbers in memory that are being analyzed, starting from address x3132
+R4 is a counter which is started from the value of 10
+R5 is a final sum after 10 values
+; Initialize registers
+
+1110 011 000110001 ; LEA R3 <-- x3101 + #49, make it startingfrom address x3132
+0101 100 100 1 00000 ; AND R4 <-- R4 AND #0, make R4 is completely zero 
+0001 100 100 1 01010 ; ADD R4 <-- R4 + #10, R4 = #10
+0101 110 110 1 00000 ; AND R5 <-- R5 AND #0, make R5 = #0
+
+; Loop
+;A
+
+0110 000 011 000000 ; LDR R0 <- M[R3 + #0], Use memory of R3 load the current value that one of the ten binary numbers
+
+;B
+
+0000 110 000000001 ;  Branch to (PC + 1) + 1 to ignore if the new number is negative
+
+0001 110 110 0 00 000 ; ADD R5 <- R5 + R0, store the value in R5
+
+; C
+
+0001 011 011 1 00001 ; ADD R3 <- R3 + #1, Increment pointer by adding 1 to become x3133
+
+0001 100 100 1 11111 ; ADD R4 < - R4 + #-1, Decrement counter by xFFFF to become value of 9
+
+; D
+
+0000 001 111111010 ; BR to (PC + 1) + #-6 which is steps 2.a and loop while previous CC is 001
+
+; Stop 
+
+1111 0000 00100101 ; TRAP x25, HALT the program 
+

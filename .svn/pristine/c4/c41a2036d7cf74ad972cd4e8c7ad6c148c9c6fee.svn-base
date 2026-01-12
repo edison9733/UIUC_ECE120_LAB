@@ -1,0 +1,9 @@
+===== GRADING FOR lab2.txt =====
+===== GRADING FOR lab2.c =====
+int a=256:  1/1
+while(a > 1):  1/1
+printf("%d\n", a):  1/1
+a = sqrt(a):  1/1
+no unnecessary modifications: 1/1
+===== GRADE =====
+Total: 19/19
